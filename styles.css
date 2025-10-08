@@ -39,12 +39,32 @@ body {
 
 .navbar .d-flex {
     gap: 20px;
+    align-items: center;
 }
 
 .navbar .btn {
     padding: 8px 16px;
     font-size: 14px;
     white-space: nowrap;
+}
+
+/* Desktop menu alignment fixes */
+.navbar .d-none.d-lg-flex {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar .d-none.d-lg-flex > div:first-child {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .d-none.d-lg-flex > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 /* Hero Section */
@@ -426,25 +446,13 @@ body {
     
     /* Fix mobile menu spacing */
     .navbar .d-lg-none {
-        gap: 15px;
-        align-items: center;
-        justify-content: space-between;
+        gap: 10px;
     }
     
     .navbar .d-lg-none .btn {
-        padding: 8px 16px;
+        padding: 8px 12px;
         font-size: 14px;
         white-space: nowrap;
-        flex-shrink: 0;
-    }
-    
-    .navbar .d-lg-none .d-flex:first-child {
-        flex: 1;
-        justify-content: flex-start;
-    }
-    
-    .navbar .d-lg-none .d-flex:last-child {
-        flex-shrink: 0;
     }
     
     .hero-logo {
@@ -504,15 +512,11 @@ body {
     
     /* Extra mobile menu spacing fixes */
     .navbar .d-lg-none {
-        gap: 12px;
+        gap: 8px;
     }
     
     .navbar .d-lg-none .btn {
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-    
-    .navbar .d-lg-none .d-flex:first-child span {
+        padding: 6px 10px;
         font-size: 12px;
     }
     
