@@ -1,0 +1,114 @@
+LANDING PAGE STRUCTURE (ANALYSIS + BUILD GUIDE)
+
+1. Hero Section – Relieve the Pain & Drive Action
+Purpose: Immediately communicate relief from the customer’s core problem and introduce the brand as the solution.
+Layout:
+H1 headline written in a way that speaks to solving the visitor’s pain point.
+Subheadline or supporting sentence reinforcing what the company does (e.g., “Local plumbing, drain, and sewer line experts”).
+Main Offer / Coupon displayed as a badge or callout near the hero image (e.g., “Free Sewer Camera Inspection”).
+Primary CTA button (e.g., “Schedule Service Now”) in a bright color that contrasts with the background.
+Hero image showing technicians on the job or service vehicles for immediate credibility.
+
+2. 3 Quick Service Callouts – Build Trust & Relevance Fast
+Purpose: Highlight core service categories so users can quickly identify the help they need.
+Layout:
+Horizontally aligned cards or boxes.
+Each includes:
+An icon or photo.
+Short service title (e.g., “Drain Cleaning,” “Leak Detection,” “Plumbing Services,” “Water Heater Replacement / Maintenance,” “Sewer Line”).
+Optional brief description.
+
+3. Credibility + Review Section – Social Proof + CTA
+Purpose: Build immediate trust with new visitors.
+Layout:
+Google Reviews badge or stars with “1700+ 5-Star Ratings” messaging.
+A bright secondary CTA button (e.g., “Schedule Now”) below or beside the reviews.
+
+4. Service Area Map – Local SEO + Proof of Coverage
+Purpose: Show service coverage visually and reinforce local relevance.
+Layout:
+Map image or interactive map showing the service area.
+Service Area = The radius is Danielsville, to Comer, to Union Point, to Greensboro, to Between, to Grayson, to (West of) Lawrenceville, through Suwanee, to (north of) Buford, over most of Lake Lanier, around (north of) Gainesville, through Gillsville, above Maysville, above Commerce, and through Ila, back to Danielsville.
+Optional secondary CTA.
+
+5. Promotions & Offers Section – Conversion Push
+Purpose: Highlight current deals to nudge hesitant users.
+Layout:
+Section header like “Current Promotions” or “Hero Savings.”
+3 side-by-side offer cards each with:
+Offer headline (“FREE Camera Inspection,” “FREE Water Quality Test,” “FREE Water Heater Flush”).
+Short description of what’s included.
+Price or value callout.
+CTA button on each card (e.g., “Claim Offer”).
+
+6. Testimonial Highlight – Build Trust Mid-Page
+Purpose: Reassure visitors as they scroll further.
+Layout:
+Testimonial carousel with:
+“Luke came out and switched out our water heater. He was punctual, very clean, and worked with fantastic communication and care. Overall, a wonderful experience and I would highly recommend him to anyone! Thank you Luke and Slam Plumbing!!!”
+“SLAM Plumbing did a great job installing a whole home water filtration unit on my house. They were quick, dependable, and professional. The technician showed up on time for his appointment and had me an estimate within an hour. Once confirmed, they showed up next day and installed the filter and even left me the tools to change my own filter. Would 100% recommend them to family and friends.”
+“Look no further for your plumbing needs. Masen and his crew member were amazing and kept me involved in every step of the way to repair a pipe leak. He is very knowledgeable and skilled and applied this, making me feel that we were working together on this repair while educating me in the process. The team was also quick to respond to getting me scheduled. I am very thankful for their service. They are the best!”
+Optional technician photo or illustration next to review.
+
+7. Service Deep Dive – Plumbing Services
+Purpose: Educate and sell a key service.
+Layout:
+Section headline.
+2–3 short paragraphs describing the service, process, and benefits.
+Backflow Testing & Repair
+Drain Cleaning
+Gas Lines
+Hydro Jetting
+Leak Detection
+Plumbing Fixture Installation
+Polybutylene Removal
+Toilets
+Water & Sewer Lines
+Water Heaters
+Supporting image of technician or service in action.
+
+8. 24/7 Emergency Service Section – Build Urgency
+Purpose: Reassure customers that help is available any time.
+Layout:
+Headline emphasizing 24-hour or same-day service.
+Short supporting text about response speed and reliability.
+Optional phone CTA or button.
+
+9. Why Choose Us – Credibility & Differentiation
+Purpose: Position the brand as the obvious choice.
+Layout:
+Section headline (“Reasons to Choose Us”).
+4–6 icon cards with short benefit statements (e.g., “100+ Years Combined Experience,” “Available 24/7,” “Trusted Local Experts”).
+
+10. Call-to-Action Section – Conversion Reinforcement
+Purpose: Capture leads from users ready to act.
+Layout:
+Headline that invites contact (“Need a Certified Plumber?”).
+Short supporting text.
+CTA button or phone number prominently displayed.
+
+11. Contact Form + Map – Final Lead Capture
+Purpose: Make it easy for ready buyers to convert.
+Layout:
+Form fields: Name, Email, Phone, Address, Message (and possibly dropdown for service type).
+Adjacent map graphic showing service area.
+Optional secondary text reinforcing response time or reliability.
+
+12. Footer – Utility + Reassurance
+Purpose: Provide key links and reinforce brand trust.
+Layout:
+Contact info and emergency phone number.
+Social media icons.
+Legal links (Terms, Privacy, Licenses, etc.).
+
+Additional Notes for Cursor:
+- Maintain consistent CTA color throughout the page to visually guide conversions.
+- Use heroic illustrations, technician photos, and iconography to humanize the brand and keep the tone approachable.
+- Add sticky header with phone number + CTA button to maximize conversions from mobile.
+
+Branding:
+Colors
+Secondary & CTA: #fda928
+Tertiary: #d02725
+Font Color: #000000
+Font: Montserrat - 400
