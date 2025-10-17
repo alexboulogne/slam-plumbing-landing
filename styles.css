@@ -592,45 +592,56 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    min-height: 450px;
-    max-height: 450px;
+    min-height: 350px;
+    max-height: 350px;
     overflow-y: auto;
 }
 
 /* Mobile responsive iframe */
 @media (max-width: 768px) {
     .contact-form iframe {
-        height: 500px !important;
-        min-height: 500px;
+        height: 400px !important;
+        min-height: 400px;
+        max-height: 400px;
         font-size: 16px; /* Prevents zoom on iOS */
+        width: 100%;
+        border: none;
     }
     
     .contact-form {
-        padding: 0.5rem;
+        padding: 0.25rem;
         margin: 0;
+        width: 100%;
     }
     
     .contact-form h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin-bottom: 0.5rem;
-    }
-    
-    /* Ensure proper spacing on mobile */
-    .contact-form .container {
-        padding-left: 10px;
-        padding-right: 10px;
+        text-align: center;
     }
     
     /* Make the contact section more compact on mobile */
     #contact {
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
     
     #contact .row {
         margin: 0;
+        width: 100%;
     }
     
     #contact .col-lg-6 {
+        padding: 0 5px;
+        width: 100%;
+    }
+    
+    #contact .container {
         padding: 0 10px;
+        max-width: 100%;
+    }
+    
+    /* Stack contact info below form on mobile */
+    #contact .col-lg-6:last-child {
+        margin-top: 1rem;
     }
 }
