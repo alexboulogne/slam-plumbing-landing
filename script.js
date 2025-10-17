@@ -50,31 +50,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
                 
-                // Try Formspree as backup (more reliable)
-                const formspreeData = new FormData();
-                formspreeData.append('firstName', data.firstName);
-                formspreeData.append('lastName', data.lastName);
-                formspreeData.append('email', data.email);
-                formspreeData.append('phone', data.phone);
-                formspreeData.append('streetAddress', data.streetAddress);
-                formspreeData.append('streetAddress2', data.streetAddress2 || '');
-                formspreeData.append('city', data.city);
-                formspreeData.append('state', data.state);
-                formspreeData.append('zipCode', data.zipCode);
-                formspreeData.append('message', data.message || '');
+                // Use Jotform with correct API format
+                const jotformData = {
+                    "submission": {
+                        "firstName": data.firstName,
+                        "lastName": data.lastName,
+                        "email": data.email,
+                        "phone": data.phone,
+                        "streetAddress": data.streetAddress,
+                        "streetAddress2": data.streetAddress2 || '',
+                        "city": data.city,
+                        "state": data.state,
+                        "zipCode": data.zipCode,
+                        "message": data.message || ''
+                    }
+                };
                 
-                // Submit to Formspree (temporary solution)
-                fetch('https://formspree.io/f/xpwgqkqv', {
+                // Submit to Jotform API with correct format
+                fetch('https://api.jotform.com/form/252888397012062/submissions', {
                     method: 'POST',
-                    body: formspreeData
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'APIKEY': '9c0eb786b2d1e940ba54f78764bbca2c'
+                    },
+                    body: JSON.stringify(jotformData)
                 })
             .then(response => {
                 console.log('Response status:', response.status);
-                if (response.ok) {
+                return response.json();
+            })
+            .then(result => {
+                console.log('Jotform response:', result);
+                if (result.responseCode === 200) {
                     alert('Thank you for your message! We will contact you within 24 hours.');
                     this.reset();
                 } else {
-                    throw new Error('Submission failed');
+                    console.error('Submission failed:', result);
+                    throw new Error(`Submission failed: ${result.message || 'Unknown error'}`);
                 }
             })
             .catch(error => {
