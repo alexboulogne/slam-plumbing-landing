@@ -586,3 +586,9 @@ html, body {
         white-space: nowrap;
     }
 }
+
+/* Jotform Embed Styling */
+.contact-form iframe {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
