@@ -50,38 +50,39 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            // Prepare data for Jotform API
-            const jotformData = {
-                submission: {
-                    firstName: data.firstName,
-                    lastName: data.lastName,
-                    email: data.email,
-                    phone: data.phone,
-                    streetAddress: data.streetAddress,
-                    streetAddress2: data.streetAddress2 || '',
-                    city: data.city,
-                    state: data.state,
-                    zipCode: data.zipCode,
-                    message: data.message || ''
-                }
-            };
+            // Prepare data for Jotform API (using form data format)
+            const jotformData = new FormData();
+            jotformData.append('submission[firstName]', data.firstName);
+            jotformData.append('submission[lastName]', data.lastName);
+            jotformData.append('submission[email]', data.email);
+            jotformData.append('submission[phone]', data.phone);
+            jotformData.append('submission[streetAddress]', data.streetAddress);
+            jotformData.append('submission[streetAddress2]', data.streetAddress2 || '');
+            jotformData.append('submission[city]', data.city);
+            jotformData.append('submission[state]', data.state);
+            jotformData.append('submission[zipCode]', data.zipCode);
+            jotformData.append('submission[message]', data.message || '');
             
-                // Submit to Jotform API
-                fetch('https://api.jotform.com/form/252888397012062/submissions', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'APIKEY': '9c0eb786b2d1e940ba54f78764bbca2c'
-                    },
-                    body: JSON.stringify(jotformData)
-                })
-            .then(response => response.json())
+            // Submit to Jotform API
+            fetch('https://api.jotform.com/form/252888397012062/submissions', {
+                method: 'POST',
+                headers: {
+                    'APIKEY': '9c0eb786b2d1e940ba54f78764bbca2c'
+                },
+                body: jotformData
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            })
             .then(result => {
+                console.log('Jotform response:', result);
                 if (result.responseCode === 200) {
                     alert('Thank you for your message! We will contact you within 24 hours.');
                     this.reset();
                 } else {
-                    throw new Error('Submission failed');
+                    console.error('Submission failed:', result);
+                    throw new Error(`Submission failed: ${result.message || 'Unknown error'}`);
                 }
             })
             .catch(error => {
