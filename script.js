@@ -66,15 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
             
-            // Submit to Jotform API
-            fetch('https://api.jotform.com/form/YOUR_FORM_ID/submissions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'APIKEY': 'YOUR_JOTFORM_API_KEY'
-                },
-                body: JSON.stringify(jotformData)
-            })
+                // Submit to Jotform API
+                fetch('https://api.jotform.com/form/252888397012062/submissions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'APIKEY': '9c0eb786b2d1e940ba54f78764bbca2c'
+                    },
+                    body: JSON.stringify(jotformData)
+                })
             .then(response => response.json())
             .then(result => {
                 if (result.responseCode === 200) {
