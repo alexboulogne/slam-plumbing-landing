@@ -592,11 +592,30 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
+    min-height: 600px;
 }
 
 /* Mobile responsive iframe */
 @media (max-width: 768px) {
     .contact-form iframe {
-        height: 900px !important;
+        height: 650px !important;
+        min-height: 650px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .contact-form {
+        padding: 1rem;
+        margin: 0;
+    }
+    
+    .contact-form h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Ensure proper spacing on mobile */
+    .contact-form .container {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
