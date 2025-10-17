@@ -308,47 +308,53 @@
                 <div class="col-lg-6">
                     <div class="contact-form">
                         <h3 class="mb-4">Get Your Free Estimate</h3>
-                        <!-- Jotform Embed with Responsive Height -->
-                        <iframe 
-                            id="JotFormIFrame-252888397012062" 
-                            title="Contact Form" 
-                            onload="window.parent.scrollTo(0,0)" 
-                            allowtransparency="true" 
-                            allow="geolocation; microphone; camera" 
-                            src="https://form.jotform.com/252888397012062" 
-                            frameborder="0" 
-                            style="min-width:100%;max-width:100%;height:600px;border:none;" 
-                            scrolling="no">
-                        </iframe>
-                        <script type="text/javascript">
-                            var ifr = document.getElementById("JotFormIFrame-252888397012062");
-                            if (ifr) {
-                                var src = ifr.src;
-                                var iframeParams = [];
-                                if (window.location.href && window.location.href.indexOf("?") > -1) {
-                                    iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split("&"));
-                                }
-                                if (src && src.indexOf("?") > -1) {
-                                    iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-                                    src = src.substr(0, src.indexOf("?"))
-                                }
-                                iframeParams.push("isIframeEmbed=1");
-                                ifr.src = src + "?" + iframeParams.join("&");
-                                
-                                // Auto-resize iframe to fit content
-                                function resizeIframe() {
-                                    ifr.style.height = ifr.contentWindow.document.body.scrollHeight + 'px';
-                                }
-                                
-                                // Resize on load and when content changes
-                                ifr.onload = function() {
-                                    setTimeout(resizeIframe, 100);
-                                };
-                                
-                                // Listen for resize events
-                                window.addEventListener('resize', resizeIframe);
-                            }
-                        </script>
+                        <form id="contactForm" action="https://submit.jotform.com/submit/252888397012062" method="post">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="q3_name[first]" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="q3_name[first]" name="q3_name[first]" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="q3_name[last]" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="q3_name[last]" name="q3_name[last]" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="q4_email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="q4_email" name="q4_email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="q5_phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="q5_phone" name="q5_phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="q6_address" class="form-label">Street Address *</label>
+                                <input type="text" class="form-control" id="q6_address" name="q6_address" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="q7_address2" class="form-label">Street Address 2</label>
+                                <input type="text" class="form-control" id="q7_address2" name="q7_address2">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="q8_city" class="form-label">City *</label>
+                                    <input type="text" class="form-control" id="q8_city" name="q8_city" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="q9_state" class="form-label">State *</label>
+                                    <input type="text" class="form-control" id="q9_state" name="q9_state" placeholder="GA" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="q10_zip" class="form-label">Zip Code *</label>
+                                    <input type="text" class="form-control" id="q10_zip" name="q10_zip" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="q11_message" class="form-label">Message</label>
+                                <textarea class="form-control" id="q11_message" name="q11_message" rows="4" placeholder="Describe your plumbing issue..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-6">

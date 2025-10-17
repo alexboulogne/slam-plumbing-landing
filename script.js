@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-        // Form is now handled by Jotform embed - no custom JavaScript needed
+        // Form is now handled by direct submission to Jotform - no custom JavaScript needed
     }
 
     // Animate elements on scroll
