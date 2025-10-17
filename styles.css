@@ -613,3 +613,15 @@ html, body {
     color: var(--text-black);
     margin-bottom: 8px;
 }
+
+/* Clickable phone number styling */
+.contact-form a[href^="tel:"] {
+    color: var(--primary-orange);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-form a[href^="tel:"]:hover {
+    color: var(--primary-red);
+    text-decoration: underline !important;
+}
