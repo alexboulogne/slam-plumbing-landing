@@ -592,17 +592,14 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    min-height: 500px;
-    max-height: 500px;
-    overflow-y: auto;
+    min-height: 600px;
+    transition: height 0.3s ease;
 }
 
 /* Mobile responsive iframe */
 @media (max-width: 768px) {
     .contact-form iframe {
-        height: 500px !important;
-        min-height: 500px;
-        max-height: 500px;
+        min-height: 600px;
         font-size: 16px; /* Prevents zoom on iOS */
         width: 100%;
         border: none;
