@@ -591,4 +591,12 @@ html, body {
 .contact-form iframe {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Mobile responsive iframe */
+@media (max-width: 768px) {
+    .contact-form iframe {
+        height: 900px !important;
+    }
 }
