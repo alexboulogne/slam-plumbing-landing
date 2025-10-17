@@ -50,43 +50,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
                 
-                // Use Jotform with correct API format
-                const jotformData = {
-                    "submission": {
-                        "firstName": data.firstName,
-                        "lastName": data.lastName,
-                        "email": data.email,
-                        "phone": data.phone,
-                        "streetAddress": data.streetAddress,
-                        "streetAddress2": data.streetAddress2 || '',
-                        "city": data.city,
-                        "state": data.state,
-                        "zipCode": data.zipCode,
-                        "message": data.message || ''
-                    }
-                };
+                // Use Jotform's embed submission method (CORS-friendly)
+                const jotformData = new FormData();
+                jotformData.append('formID', '252888397012062');
+                jotformData.append('firstName', data.firstName);
+                jotformData.append('lastName', data.lastName);
+                jotformData.append('email', data.email);
+                jotformData.append('phone', data.phone);
+                jotformData.append('streetAddress', data.streetAddress);
+                jotformData.append('streetAddress2', data.streetAddress2 || '');
+                jotformData.append('city', data.city);
+                jotformData.append('state', data.state);
+                jotformData.append('zipCode', data.zipCode);
+                jotformData.append('message', data.message || '');
                 
-                // Submit to Jotform API with correct format
-                fetch('https://api.jotform.com/form/252888397012062/submissions', {
+                // Submit to Jotform's embed endpoint (no CORS issues)
+                fetch('https://submit.jotform.com/submit/252888397012062', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'APIKEY': '9c0eb786b2d1e940ba54f78764bbca2c'
-                    },
-                    body: JSON.stringify(jotformData)
+                    body: jotformData
                 })
             .then(response => {
                 console.log('Response status:', response.status);
-                return response.json();
-            })
-            .then(result => {
-                console.log('Jotform response:', result);
-                if (result.responseCode === 200) {
+                if (response.ok) {
                     alert('Thank you for your message! We will contact you within 24 hours.');
                     this.reset();
                 } else {
-                    console.error('Submission failed:', result);
-                    throw new Error(`Submission failed: ${result.message || 'Unknown error'}`);
+                    throw new Error('Submission failed');
                 }
             })
             .catch(error => {
