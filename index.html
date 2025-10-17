@@ -309,9 +309,15 @@
                     <div class="contact-form">
                         <h3 class="mb-4">Get Your Free Estimate</h3>
                         <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Full Name *</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email Address *</label>
@@ -322,20 +328,34 @@
                                 <input type="tel" class="form-control" id="phone" name="phone" required>
                             </div>
                             <div class="mb-3">
-                                <label for="address" class="form-label">Service Address *</label>
-                                <input type="text" class="form-control" id="address" name="address" required>
+                                <label for="streetAddress" class="form-label">Street Address *</label>
+                                <input type="text" class="form-control" id="streetAddress" name="streetAddress" required>
                             </div>
                             <div class="mb-3">
-                                <label for="service" class="form-label">Service Needed</label>
-                                <select class="form-control" id="service" name="service">
-                                    <option value="">Select a service</option>
-                                    <option value="drain-cleaning">Drain Cleaning</option>
-                                    <option value="water-heater">Water Heater Service</option>
-                                    <option value="sewer-line">Sewer Line Service</option>
-                                    <option value="leak-detection">Leak Detection</option>
-                                    <option value="emergency">Emergency Service</option>
-                                    <option value="other">Other</option>
-                                </select>
+                                <label for="streetAddress2" class="form-label">Street Address 2</label>
+                                <input type="text" class="form-control" id="streetAddress2" name="streetAddress2">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="city" class="form-label">City *</label>
+                                    <input type="text" class="form-control" id="city" name="city" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="state" class="form-label">State *</label>
+                                    <select class="form-control" id="state" name="state" required>
+                                        <option value="">Select State</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="TN">Tennessee</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="zipCode" class="form-label">Zip Code *</label>
+                                    <input type="text" class="form-control" id="zipCode" name="zipCode" required>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>

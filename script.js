@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission
+    // Form submission with Jotform API
     const contactForm = document.querySelector('#contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -39,23 +39,59 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = Object.fromEntries(formData);
             
             // Simple validation
-            if (!data.name || !data.email || !data.phone) {
+            if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.streetAddress || !data.city || !data.state || !data.zipCode) {
                 alert('Please fill in all required fields.');
                 return;
             }
             
-            // Simulate form submission
+            // Update submit button
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            setTimeout(() => {
-                alert('Thank you for your message! We will contact you within 24 hours.');
-                this.reset();
+            // Prepare data for Jotform API
+            const jotformData = {
+                submission: {
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    email: data.email,
+                    phone: data.phone,
+                    streetAddress: data.streetAddress,
+                    streetAddress2: data.streetAddress2 || '',
+                    city: data.city,
+                    state: data.state,
+                    zipCode: data.zipCode,
+                    message: data.message || ''
+                }
+            };
+            
+            // Submit to Jotform API
+            fetch('https://api.jotform.com/form/YOUR_FORM_ID/submissions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'APIKEY': 'YOUR_JOTFORM_API_KEY'
+                },
+                body: JSON.stringify(jotformData)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.responseCode === 200) {
+                    alert('Thank you for your message! We will contact you within 24 hours.');
+                    this.reset();
+                } else {
+                    throw new Error('Submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your form. Please try again or call us directly at (706) 296-0609.');
+            })
+            .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 1500);
+            });
         });
     }
 
