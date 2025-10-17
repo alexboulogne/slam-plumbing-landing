@@ -28,7 +28,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-        // Form is now handled by direct submission to Jotform - no custom JavaScript needed
+    // Form submission handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Add loading state to submit button
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Reset button after 5 seconds (in case of redirect issues)
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 5000);
+            
+            // Log form submission for debugging
+            console.log('Form submitted to JotForm');
+        });
     }
 
     // Animate elements on scroll

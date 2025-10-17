@@ -308,53 +308,79 @@
                 <div class="col-lg-6">
                     <div class="contact-form">
                         <h3 class="mb-4">Get Your Free Estimate</h3>
-                        <form id="contactForm" action="https://submit.jotform.com/submit/252888397012062" method="post">
+                        <form id="contactForm" action="https://submit.jotform.com/submit/252888397012062/" method="post">
+                            <!-- Hidden JotForm fields -->
+                            <input type="hidden" name="formID" value="252888397012062">
+                            
                             <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="q3_name[first]" class="form-label">First Name *</label>
-                                    <input type="text" class="form-control" id="q3_name[first]" name="firstName" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="q3_name[last]" class="form-label">Last Name *</label>
-                                    <input type="text" class="form-control" id="q3_name[last]" name="lastName" required>
-                                </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="q3_name[first]" class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="q3_name[first]" name="q3_name[first]" required>
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="q3_name[last]" class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" id="q3_name[last]" name="q3_name[last]" required>
+                              </div>
                             </div>
+                          
                             <div class="mb-3">
-                                <label for="q4_email" class="form-label">Email Address *</label>
-                                <input type="email" class="form-control" id="q4_email" name="email" required>
+                              <label for="q4_email" class="form-label">Email Address *</label>
+                              <input type="email" class="form-control" id="q4_email" name="q4_email" required>
                             </div>
+                          
                             <div class="mb-3">
-                                <label for="q5_phone" class="form-label">Phone Number *</label>
-                                <input type="tel" class="form-control" id="q5_phone" name="phone" required>
+                              <label for="q5_phone" class="form-label">Phone Number *</label>
+                              <input type="tel" class="form-control" id="q5_phone" name="q5_phone" required>
                             </div>
+                          
                             <div class="mb-3">
-                                <label for="q6_address" class="form-label">Street Address *</label>
-                                <input type="text" class="form-control" id="q6_address" name="streetAddress" required>
+                              <label for="q6_address" class="form-label">Street Address *</label>
+                              <input type="text" class="form-control" id="q6_address" name="q6_address" required>
                             </div>
+                          
                             <div class="mb-3">
-                                <label for="q7_address2" class="form-label">Street Address 2</label>
-                                <input type="text" class="form-control" id="q7_address2" name="streetAddress2">
+                              <label for="q7_address2" class="form-label">Street Address 2</label>
+                              <input type="text" class="form-control" id="q7_address2" name="q7_address2">
                             </div>
+                          
                             <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <label for="q8_city" class="form-label">City *</label>
-                                    <input type="text" class="form-control" id="q8_city" name="city" required>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <label for="q9_state" class="form-label">State *</label>
-                                    <input type="text" class="form-control" id="q9_state" name="state" placeholder="GA" required>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <label for="q10_zip" class="form-label">Zip Code *</label>
-                                    <input type="text" class="form-control" id="q10_zip" name="zipCode" required>
-                                </div>
+                              <div class="col-md-4 mb-3">
+                                <label for="q8_city" class="form-label">City *</label>
+                                <input type="text" class="form-control" id="q8_city" name="q8_city" required>
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                <label for="q9_state" class="form-label">State *</label>
+                                <input type="text" class="form-control" id="q9_state" name="q9_state" placeholder="GA" required>
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                <label for="q10_zip" class="form-label">Zip Code *</label>
+                                <input type="text" class="form-control" id="q10_zip" name="q10_zip" required>
+                              </div>
                             </div>
+                          
                             <div class="mb-3">
-                                <label for="q11_message" class="form-label">Message</label>
-                                <textarea class="form-control" id="q11_message" name="message" rows="4" placeholder="Describe your plumbing issue..."></textarea>
+                              <label for="q12_service" class="form-label">Service Needed *</label>
+                              <select class="form-control" id="q12_service" name="q12_service" required>
+                                <option value="">Select a service...</option>
+                                <option value="Emergency Service">Emergency Service</option>
+                                <option value="Drain Cleaning">Drain Cleaning</option>
+                                <option value="Water Heater">Water Heater Service</option>
+                                <option value="Sewer Line">Sewer Line Service</option>
+                                <option value="Leak Detection">Leak Detection</option>
+                                <option value="Plumbing Repair">Plumbing Repair</option>
+                                <option value="Installation">Installation</option>
+                                <option value="Other">Other</option>
+                              </select>
                             </div>
+                          
+                            <div class="mb-3">
+                              <label for="q11_message" class="form-label">Message *</label>
+                              <textarea class="form-control" id="q11_message" name="q11_message" rows="4" placeholder="Describe your plumbing issue..." required></textarea>
+                            </div>
+                          
                             <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
-                        </form>
+                          </form>
+                          
                     </div>
                 </div>
                 <div class="col-lg-6">
