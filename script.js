@@ -28,61 +28,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission with Jotform API
-    const contactForm = document.querySelector('#contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simple validation
-            if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.streetAddress || !data.city || !data.state || !data.zipCode) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Update submit button
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Prepare data for Jotform API (using form data format)
-            const jotformData = new FormData();
-            jotformData.append('submission[firstName]', data.firstName);
-            jotformData.append('submission[lastName]', data.lastName);
-            jotformData.append('submission[email]', data.email);
-            jotformData.append('submission[phone]', data.phone);
-            jotformData.append('submission[streetAddress]', data.streetAddress);
-            jotformData.append('submission[streetAddress2]', data.streetAddress2 || '');
-            jotformData.append('submission[city]', data.city);
-            jotformData.append('submission[state]', data.state);
-            jotformData.append('submission[zipCode]', data.zipCode);
-            jotformData.append('submission[message]', data.message || '');
-            
-            // Submit to Jotform API
-            fetch('https://api.jotform.com/form/252888397012062/submissions', {
-                method: 'POST',
-                headers: {
-                    'APIKEY': '9c0eb786b2d1e940ba54f78764bbca2c'
-                },
-                body: jotformData
-            })
+        // Form submission with Jotform embed method
+        const contactForm = document.querySelector('#contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Simple validation
+                if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.streetAddress || !data.city || !data.state || !data.zipCode) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Update submit button
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Use Jotform's embed submission method
+                const jotformData = new FormData();
+                jotformData.append('formID', '252888397012062');
+                jotformData.append('firstName', data.firstName);
+                jotformData.append('lastName', data.lastName);
+                jotformData.append('email', data.email);
+                jotformData.append('phone', data.phone);
+                jotformData.append('streetAddress', data.streetAddress);
+                jotformData.append('streetAddress2', data.streetAddress2 || '');
+                jotformData.append('city', data.city);
+                jotformData.append('state', data.state);
+                jotformData.append('zipCode', data.zipCode);
+                jotformData.append('message', data.message || '');
+                
+                // Submit to Jotform using their embed endpoint
+                fetch('https://submit.jotform.com/submit/252888397012062', {
+                    method: 'POST',
+                    body: jotformData
+                })
             .then(response => {
                 console.log('Response status:', response.status);
-                return response.json();
-            })
-            .then(result => {
-                console.log('Jotform response:', result);
-                if (result.responseCode === 200) {
+                if (response.ok) {
                     alert('Thank you for your message! We will contact you within 24 hours.');
                     this.reset();
                 } else {
-                    console.error('Submission failed:', result);
-                    throw new Error(`Submission failed: ${result.message || 'Unknown error'}`);
+                    throw new Error('Submission failed');
                 }
             })
             .catch(error => {
