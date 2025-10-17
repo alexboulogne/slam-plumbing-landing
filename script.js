@@ -50,24 +50,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
                 
-                // Use Jotform's embed submission method
-                const jotformData = new FormData();
-                jotformData.append('formID', '252888397012062');
-                jotformData.append('firstName', data.firstName);
-                jotformData.append('lastName', data.lastName);
-                jotformData.append('email', data.email);
-                jotformData.append('phone', data.phone);
-                jotformData.append('streetAddress', data.streetAddress);
-                jotformData.append('streetAddress2', data.streetAddress2 || '');
-                jotformData.append('city', data.city);
-                jotformData.append('state', data.state);
-                jotformData.append('zipCode', data.zipCode);
-                jotformData.append('message', data.message || '');
+                // Try Formspree as backup (more reliable)
+                const formspreeData = new FormData();
+                formspreeData.append('firstName', data.firstName);
+                formspreeData.append('lastName', data.lastName);
+                formspreeData.append('email', data.email);
+                formspreeData.append('phone', data.phone);
+                formspreeData.append('streetAddress', data.streetAddress);
+                formspreeData.append('streetAddress2', data.streetAddress2 || '');
+                formspreeData.append('city', data.city);
+                formspreeData.append('state', data.state);
+                formspreeData.append('zipCode', data.zipCode);
+                formspreeData.append('message', data.message || '');
                 
-                // Submit to Jotform using their embed endpoint
-                fetch('https://submit.jotform.com/submit/252888397012062', {
+                // Submit to Formspree (temporary solution)
+                fetch('https://formspree.io/f/xpwgqkqv', {
                     method: 'POST',
-                    body: jotformData
+                    body: formspreeData
                 })
             .then(response => {
                 console.log('Response status:', response.status);
