@@ -38,14 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            // Reset button after 5 seconds (in case of redirect issues)
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 5000);
-            
             // Log form submission for debugging
             console.log('Form submitted to JotForm');
+            
+            // Redirect to thank you page after a short delay
+            setTimeout(() => {
+                window.location.href = '/thank-you.html';
+            }, 2000);
         });
     }
 
