@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Redirect to thank you page after a short delay
             setTimeout(() => {
-                window.location.href = '/thank-you.html';
+                window.location.href = '/thank-you';
             }, 2000);
         });
     }
