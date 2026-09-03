@@ -670,6 +670,8 @@ document.querySelectorAll('[data-fin]').forEach(function(b){b.addEventListener('
     document.body.appendChild(jf);jf.submit();
     form.style.display='none';
     document.getElementById('qok').style.display='block';
+    // Google Ads conversion — fires only on successful lead submit
+    if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-16857659908/tbuNCLOS3O0cEIT0reY-','value':1.0,'currency':'USD'});}
   });
 })();
 </script>
