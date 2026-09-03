@@ -3,6 +3,11 @@
     {
       "source": "/thank-you",
       "destination": "/thank-you.html"
+    },
+    {
+      "source": "/water-heater",
+      "destination": "/water-heater/index.html"
     }
   ]
 }
+
