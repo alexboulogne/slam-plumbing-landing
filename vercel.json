@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://slammechanical.com",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/thank-you",
